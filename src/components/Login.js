@@ -1,4 +1,4 @@
-import styles from "../styles/Login.module.css"
+import styles from '../styles/Login.module.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -84,19 +84,23 @@ function Login() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-            </label>
-            <br />
-            <label>
-                Password:
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </label>
-            <br />
-            <button type="submit">Log in</button>
-        </form>
+        <div className={styles.textCenter}>
+            <div className={styles.textCenter}>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Username:
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    </label>
+                    <br />
+                    <label>
+                        Password:
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </label>
+                    <br />
+                    <button type="submit">Log in</button>
+                </form>
+            </div>
+        </div>
     );
 }
 
