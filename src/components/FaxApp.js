@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "../styles/FaxApp.module.css"
 import { useLocation } from 'react-router-dom';
 
