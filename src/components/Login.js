@@ -65,7 +65,7 @@ function Login() {
     });
 
     function handleSetShare() {
-        var url = `https://ramirovolodarsky.github.io/fax-sender-app/index.html?loginId=${loginId}`;
+        var url = `https://ramirovolodarsky.github.io/fax-sender-webex/fax-app?loginId=${loginId}`;
         app.setShareUrl(url, "", "Shared App").then(() => {
             log("Set share URL", url);
         }).catch((errorcode) => {
