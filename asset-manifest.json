@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fax-sender-webex/static/css/main.1ca6d606.css",
+    "main.js": "/fax-sender-webex/static/js/main.fc2a6c3c.js",
+    "static/js/787.aa76278f.chunk.js": "/fax-sender-webex/static/js/787.aa76278f.chunk.js",
+    "index.html": "/fax-sender-webex/index.html",
+    "main.1ca6d606.css.map": "/fax-sender-webex/static/css/main.1ca6d606.css.map",
+    "main.fc2a6c3c.js.map": "/fax-sender-webex/static/js/main.fc2a6c3c.js.map",
+    "787.aa76278f.chunk.js.map": "/fax-sender-webex/static/js/787.aa76278f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ca6d606.css",
+    "static/js/main.fc2a6c3c.js"
+  ]
+}
