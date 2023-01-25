@@ -8,7 +8,7 @@ function App() {
     <Router basename="/fax-sender-webex">
       <Routes>
         <Route path="fax-app" element={<FaxApp />} />
-        <Route path="/" element={<Login />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </Router>
   );
