@@ -1,7 +1,7 @@
 import styles from '../styles/Login.module.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import FaxApp from './FaxApp';
 
 function Login() {
 
@@ -9,6 +9,7 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    var loginId;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,19 +37,20 @@ function Login() {
                 if (data.error) {
                     alert(data.error);
                 } else {
-                    // loginId = data.NSX.LoginId;
+                    loginId = data.NSX.LoginId;
+                    alert('Login ' + loginId)
                     handleSetShare();
                     setIsLoggedIn(true);
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                alert('Error:' + error);
                 alert('An error occurred. Please try again later.');
             });
     }
 
     if (isLoggedIn) {
-        navigate('/fax-app');
+        // navigate('/fax-app', { state: { loginId } });
         return null;
     }
 
@@ -62,15 +64,12 @@ function Login() {
         log("Error with code: ")
     });
 
-    // Button click handler to set share URL
     function handleSetShare() {
-        // Replace this with the URL of your shared page
-        var url = "https://ramirovolodarsky.github.io/fax-sender-app/index.html"
-        // "Shared App" is the title of the window or tab that will be created
+        var url = `https://ramirovolodarsky.github.io/fax-sender-app/index.html?loginId=${loginId}`;
         app.setShareUrl(url, "", "Shared App").then(() => {
             log("Set share URL", url);
         }).catch((errorcode) => {
-            log("Error: ")
+            log("Error: " + errorcode)
         });
     }
 

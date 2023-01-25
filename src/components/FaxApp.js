@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "../styles/FaxApp.module.css"
+import { useLocation } from 'react-router-dom';
 
 function FaxApp() {
+
+    const location = useLocation();
+    const loginId = location.search.split("=")[1];
+
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -24,6 +29,7 @@ function FaxApp() {
         }
 
         alert(JSON.stringify(data))
+        alert("LoginId" + loginId)
 
         const options = {
             method: 'POST',
@@ -31,7 +37,7 @@ function FaxApp() {
             headers: { 'Content-Type': 'application/json' }
         };
 
-        fetch('https://cloud.faxback.net/rest/Messages/SendMessage?LoginId=' + 'ab4ddf9f-5433-4782-a879-c6300181bf4e', options)
+        fetch('https://cloud.faxback.net/rest/Messages/SendMessage?LoginId=' + loginId, options)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
